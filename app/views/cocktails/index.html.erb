@@ -1,0 +1,18 @@
+<div class="box">
+  <% @cocktails.each do |cocktail| %>
+  <div class="cocktail card">
+    <div class="wrapper">
+      <div class="data">
+        <div class="content">
+          <h1 class="title"><%= cocktail.name %></h1>
+          <p class="text">It's disgusting we don't even know why we're displaying this.</p><br><br>
+          <a class="button" <%= link_to("En savoir plus", cocktail_path(cocktail)) %>></a>
+        </div>
+      </div>
+    </div>
+    </div>
+      <% end %>
+  </div>
+
+
+<%= link_to 'Create cocktail', new_cocktail_path %>
