@@ -13,6 +13,10 @@
     <%= link_to "Remove", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>
   <% end %>
 </ul>
-    <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+<% if @cocktail.photo.present? %>
+  <%= cl_image_tag @cocktail.photo.key, width: 400, crop: :fill %>
+<% else %>
+  <%= image_tag 'no-image.jpg', width: 400 %>
+<% end %>
 </div>
 <%= link_to "Back", cocktails_path, class: "btn btn-primary" %>
